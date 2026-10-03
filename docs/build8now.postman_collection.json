@@ -1,0 +1,448 @@
+{
+  "info": {
+    "_postman_id": "cec03665-3e65-4dc3-a9b3-4025f2ad1037",
+    "name": "build8now",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24937190",
+    "_collection_link": "https://go.postman.co/collection/24937190-cec03665-3e65-4dc3-a9b3-4025f2ad1037?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://localhost:5000/api/auth/register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"full_name\": \"John Doe\",\r\n  \"email\": \"john@test.com\",\r\n  \"password\": \"Password123!\",\r\n  \"role\": \"CUSTOMER\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/auth/login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"john@test.com\",\r\n  \"password\": \"Password123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/auth/me",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huQHRlc3QuY29tIiwicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzkxMDAxMzAyLCJleHAiOjE3OTEwODc3MDJ9.9YeNNfQZ9nLGUsrkMsPbzS8sAECzP-OX0yHyvLyMHGo",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/auth/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/shipping/calculate",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBiOG4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzkxMDAyNTAxLCJleHAiOjE3OTEwMDM0MDF9.CrITp4ljVtJ2eCW7cPXOVtMk8v5Yy045M0mV72zuB0k",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"product_id\": 2,\r\n  \"quantity\": 1,\r\n  \"distance_km\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/shipping/calculate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "shipping",
+            "calculate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/orders",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huQHRlc3QuY29tIiwicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzkxMDAzOTE4LCJleHAiOjE3OTEwMDQ4MTh9.M38q-qKw0AXPvNrlx7VOQC3R3CoTJrTbx_XQ-mVRoJE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"items\": [\r\n    { \"product_id\": 2, \"quantity\": 1 }\r\n  ],\r\n  \"distance_km\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/influencers/me/balance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJhcmNoQGI4bi5jb20iLCJyb2xlIjoiSU5GTFVFTkNFUiIsImlhdCI6MTc5MTAwNDg1NiwiZXhwIjoxNzkxMDA1NzU2fQ.IK2-uTcPOl0qszvf-YgyXR0pPnJ1PgkEowraHPD5m_0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/influencers/me/balance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "influencers",
+            "me",
+            "balance"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/influencers/me/ledger",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJhcmNoQGI4bi5jb20iLCJyb2xlIjoiSU5GTFVFTkNFUiIsImlhdCI6MTc5MTAwNDg1NiwiZXhwIjoxNzkxMDA1NzU2fQ.IK2-uTcPOl0qszvf-YgyXR0pPnJ1PgkEowraHPD5m_0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/influencers/me/ledger",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "influencers",
+            "me",
+            "ledger"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/influencers/me/referred-customers",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJhcmNoQGI4bi5jb20iLCJyb2xlIjoiSU5GTFVFTkNFUiIsImlhdCI6MTc5MTAwNDg1NiwiZXhwIjoxNzkxMDA1NzU2fQ.IK2-uTcPOl0qszvf-YgyXR0pPnJ1PgkEowraHPD5m_0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/influencers/me/referred-customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "influencers",
+            "me",
+            "referred-customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/admin/shipping-profiles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBiOG4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzkxMDA3MjIzLCJleHAiOjE3OTEwMDgxMjN9.IArUjcW3S9fICXe-ojTCy1EVYj5qAD3XiF8r2dTfxAY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Express Shipping\",\r\n  \"combine_strategy\": \"SUM\",\r\n  \"min_charge\": 100,\r\n  \"max_charge\": 2000,\r\n  \"currency\": \"INR\",\r\n  \"rules\": [\r\n    { \"basis\": \"NONE\", \"calc_method\": \"FIXED\", \"rate\": 150, \"label\": \"Base\" },\r\n    { \"basis\": \"WEIGHT\", \"calc_method\": \"PER_UNIT\", \"range_min\": 0, \"range_max\": 100, \"rate\": 5, \"label\": \"Per kg\" }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/shipping-profiles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "shipping-profiles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/admin/shipping-profiles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBiOG4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzkxMDA3MjIzLCJleHAiOjE3OTEwMDgxMjN9.IArUjcW3S9fICXe-ojTCy1EVYj5qAD3XiF8r2dTfxAY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/admin/shipping-profiles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "shipping-profiles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/admin/shipping-profiles/1",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBiOG4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzkxMDA3MjIzLCJleHAiOjE3OTEwMDgxMjN9.IArUjcW3S9fICXe-ojTCy1EVYj5qAD3XiF8r2dTfxAY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/admin/shipping-profiles/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "shipping-profiles",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/admin/products/2/shipping-profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBiOG4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzkxMDA3MjIzLCJleHAiOjE3OTEwMDgxMjN9.IArUjcW3S9fICXe-ojTCy1EVYj5qAD3XiF8r2dTfxAY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"profile_id\": 2 }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/admin/products/2/shipping-profile",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "products",
+            "2",
+            "shipping-profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/admin/shipping-profiles/2",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBiOG4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzkxMDA3MjIzLCJleHAiOjE3OTEwMDgxMjN9.IArUjcW3S9fICXe-ojTCy1EVYj5qAD3XiF8r2dTfxAY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/admin/shipping-profiles/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "admin",
+            "shipping-profiles",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
